@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+input {
+  border: none;
+  outline: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: '.';
+  height: 0;
+}
+
+.clearfix {
+  *zoom: 1;
+}
