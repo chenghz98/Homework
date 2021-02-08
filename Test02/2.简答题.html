@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h4>1、DOM和BOM的区别</h4><br>
+        <p>答:
+            1.BOM是浏览器对象模型,DOM是文档对象模型;<br>
+            2.BOM是对浏览器的操作,而DOM则是浏览器的HTML等文档的操作;<br>
+            3.BOM没有相关标准,DOM是W3C标准;<br>
+            4、BOM的最根本对象是window,DOM最根本对象是window.document
+        </p>
+        <br>
+        <hr>
+
+        <h4>2、JS有几种引入方式</h4><br>
+        <p>
+            答: 1.行内引入 <标签 on事件类型='js代码'></标签><br>
+            2.内部引入,在body或head标签中定义"script"双标签,在script标签中进行js的编写<br>
+            3.外部引入,在外部进行js文件的编写,用&lt; script src="" &gt; &lt;/script &gt;引入js
+        </p>
+        <br>
+        <hr>
+
+        <h4> 3、innerHTML 和innerText : 区别</h4><br>
+        <p>答: innerHTML、innerText这两个属性，都是获取document对象文本内容;但innerHTML会对HTML标签进行解析编译,而innerText只会获取问本内容不会解析HTML标签</p>
+        <br>
+        <hr>
+
+        <h4> 4、基本数据类型和引用数据类型的区别？</h4><br>
+        <p>基本类型值指的是简单的数据段,存放在栈中；引用类型值指由多个值构成的对象,存放在堆中</p>
+        <br>
+        <hr>
+
+
+        <h4>5、基本数据类型有哪些？</h4><br>
+        <p>
+            Number、String、Boolean、Null、 Undefined
+        </p>
+        <br>
+        <hr>
+
+        <h4> 6、引用数据类型都有哪些？</h4><br>
+        <p>Function,Array,Object</p>
+        <br>
+        <hr>
+
+
+        <h4> 7、其他数据类型转布尔类型是false有且只有哪些？</h4><br>
+        <p> null, Undefined, 空字符串"",Number型的0,NaN</p>
+        <br>
+        <hr>
+
+        <h4> 8、逻辑运算符：与、或、非</h4><br>
+        <p>
+            与:&& , 或:|| ,非:!
+        </p>
+        <br>
+        <hr>
+
+
+        <h4> 9、null和undefined的区别？</h4><br>
+        <p> null是代表空值,undefined是代表未定义;Null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象;Undefined表示”缺少值”,就是此处应该有一个值,但是还没有定义</p>
+        <br>
+        <hr>
+
+
+        <h4> 10、常见的null的情况</h4><br>
+        <p>
+            手动设置变量的值或者对象某一个属性值为null（此时不赋值，会在后面的代码中进行赋值，相当于初始化。）<br>
+            在JS的DOM元素获取中，如果没有获取到指定的元素对象，结果一般是null。<br>
+            Object.prototype._proto_的值也是null。<br>
+            在正则捕获的时候，如果没有捕获到结果，默认也是null。<br>
+        </p>
+        <br>
+        <hr>
+
+
+        <h4> 11、常见的undefined的情况</h4><br>
+        <p>在变量提升（预解析）阶段，只声明未定义，默认值就是undefined。<br>
+            在JS的严格模式下（”use strict”），没有明确的主体，this指的就是undefined。<br>
+            函数定义没有返回值（return或者return后面什么也不带），默认的返回值就是undefined。<br>
+            函数定义形参不传值，默认就是undefined。<br>
+            对象没有这个属性名，属性值默认就是undefined。<br>
+            在数组的find方法中，没有找到的情况下是undefined。</p>
+        <br>
+        <hr>
+
+
+        <h4>12、对象的定义</h4><br>
+        <p>对象是属性的无序集合，每个属性存放一个原始值、对象或函数;对象是无特定顺序的值的数组,对象是一种特殊的数据类型，可以包含多个成员</p>
+        <br>
+        <hr>
+
+
+        <h4> 13、JS四种检测</h4><br>
+        <p>
+            1.typeof:对于基础数据类型可以正确检测,对于引用数据类型只能返回Object<br />
+            2.instanceof:检测的是原型,对于基本数据类型是无效的<br />
+            3.Object.prototype.toString:可以检测所有类型的数据,
+            4.constructor:通过.constructor检测数据类型,对null和undefined无效,且不稳定
+        </p>
+        <br>
+        <hr>
+
+
+        <h4> 14、continue和break的区别</h4><br>
+        <p>
+            continue是结束当前循环进行下一次循环,而break是就直接结束本次循环不再执行
+        </p>
+        <br>
+        <hr>
+
+
+        <h4>15、for…in..和for…of..的区别？</h4><br>
+        <p>for-in是ES5标准，遍历的是key（可遍历对象、数组或字符串的key）；for-of是ES6标准，遍历的是value;for...in
+            更适合遍历对象,它遍历数组时遍历顺序有可能不是按照实际数组的内部顺序;for-of可以简单、正确地遍历数组（不遍历原型method和name）。</p>
+        <br>
+        <hr>
+    </div>
+
+    <script>
+        console.log(123 instanceof Array);
+    </script>
+</body>
+
+</html>

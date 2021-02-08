@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div>
+        一.选择题<br />
+        1.变量是用来<strong>(B)</strong>。<br />
+        A： 作为实参传递<br />
+        B： 储存数据<br />
+        C： 储存字符串<br />
+        D：保存进班数据类型<br />
+        <hr />
+        2.使用var方式声明在 <strong>(A)</strong> 的变量称为局部变量。<br />
+        A：函数<br />
+        B：对象<br />
+        C：数组<br />
+        D：字符串<br />
+        <hr />
+        3.关于new的描述，正确的是<strong>(B)</strong><br />
+        A：创建新的文件<br />
+        B：实例化对象<br />
+        C：转换字符串<br />
+        D：转换数组<br />
+        <hr />
+        4.下列对预解析说法正确的是:<strong>(D)</strong><br />
+        A：预解析是实例化函数<br />
+        B：预解析是从下到上进行执行的<br />
+        C：预解析先提升对象，在提升函数<br />
+        D：预解析先提升变量，在提升函数，对象不提升<br />
+        <hr />
+        5：下列哪个选项属于DOM对象<strong>(D)</strong>？<br />
+        A：Object<br />
+        B：window<br />
+        C：Array<br />
+        D：document<br />
+        <hr />
+        6.undefined和defined的说法正确的是<strong>(A)</strong><br />
+        A：undefined没有声明<br />
+        B：defined是声明了变量没有给值<br />
+        C：程序运行出defined后不影响后面的代码运行<br />
+        D：undefined不影响程序的运行<br />
+        <hr />
+        7.下列关于基本数据类型说法正确的是:<strong>(B)</strong><br />
+        A:”1”是数值类型<br />
+        B:1属于基本数据类型<br />
+        C：Object<br />
+        D：Array<br />
+        <hr />
+        8.下列关于事件冒泡说法正确的是<strong>(C)</strong><br />
+        A：事件冒泡就是从外到内<br />
+        B: 事件捕获阶段和事件冒泡阶段是一样的<br />
+        C：如果addEventListener的第三个参数是false那么应处于事件冒泡阶段<br />
+        D：如果addEventListener的第三个参数是true那么应处于事件冒泡阶段<br />
+        <hr />
+        9.下列关于鼠标事件描述正确的是<strong>(A)</strong><br />
+        A：onmouseover，onmouseout鼠标经过，离开会触发事件冒泡onmouseenter，onmouseleave不会<br />
+        B：onblur 鼠标获取焦点<br />
+        C：onfocus 鼠标失去焦点<br />
+        D：onmousemove 鼠标移动触发，onmousedown鼠标弹起触发,onmousup鼠标按下<br />
+        <hr />
+        10.关于window.onload的解释最为完整正确是的<strong>(C)</strong><br />
+        A： 文档中所有的元素加载完毕执行<br />
+        B：文档中所有的元素加载完毕并且图片加载完毕执行<br />
+        C：文档中所有的元素加载完毕并且所有的外部文件加载完毕执行<br />
+        D：文档中所有的元素加载完毕并且外部js加载完毕执行<br />
+        <hr />
+        11对split()和join()说法正确的是<strong>(C)</strong><br />
+        A：split可以将字符串进行拼接
+        B：split 可以将字符串进行截取转换成对象<br />
+        C：join 可以将截取的数组转换成为字符串<br />
+        D：join 可以就截取的字符串转换成为数组<br />
+        <hr />
+        12.有代码如下： (function(){ var a = b = 5; })(); console.log(b); 打印的结果是<strong>(A)</strong>？<br />
+        A：5<br />
+        B：undefined<br />
+        C：报错<br />
+        D：null<br />
+        <hr />
+        13.下列描述中对于setInterval()方法描述正确的是:<strong>(C)</strong><br />
+        A:该定时器方法只能执行一次<br />
+        B: 该定时器方法属于document对象<br />
+        C:该定时器方法可以传入回调函数和时间参数<br />
+        D:该定时器一旦启用，就不能给清理<br />
+        <hr />
+        14.下列选项中对基本类型和复杂类型理解正确的是<strong>(B)</strong><br />
+        A：基本类型之间是引用传递<br />
+        B：复杂数据类型之间传递的是地址<br />
+        C：基本类型的值储存在堆中<br />
+        D：复杂类型的对象在栈中存储<br />
+        <hr />
+        15.下列描述正确的是<strong>(A)</strong>br />
+        A：break可以跳过循环<br />
+        B：continue是结束循环的意思<br />
+        C：return是返回值，函数里面都有一个默认的返回值<br />
+        D：在循环里函数在return后代码继续执行<br />
+
+        <hr />
+        二.简答题<br />
+        <hr />
+        1.请用一句话描述事件委托的原理是什么<br />
+        <p>答: 通过事件冒泡机制,将事件绑定到父元素身上冒泡到子元素供子元素使用</p>
+        <hr />
+        2.请写出你所知道的location的一些常用用法（最少4种）<br />
+        <p>答: location.href进行页面跳转<br />
+            assign() 加载新的文档。<br />
+            reload() 重新加载当前文档，相当于按浏览器上的“刷新”(IE)或“Reload”(Netscape)键。<br />
+            replace() 用新的文档替换当前文档，相当于按浏览器上的“刷新”(IE)或“Reload”键。</p>
+    </div>
+</body>
+
+</html>

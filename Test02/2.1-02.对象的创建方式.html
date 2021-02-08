@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //<!--! 1.使用字面量创建对象-->
+        const obj1 = {
+            name: '香米',
+            age: 18,
+            sex: '男'
+        }
+        //<!--! 1.使用new创建对象-->
+        var obj2 = new Object()
+        obj2.name = "张三"
+        obj2.age = 13
+        obj2.sex = '女'
+
+
+        //<!--! 1.使用构造函数创建对象-->
+
+        function Obj3(name, age, sex) {
+            this.name = name
+            this.age = age
+            this.sex = sex
+            this.hubby = function () {
+                console.log("你好");
+            }
+        }
+        const liSi = new Obj3("李四", 34, "男")
+        liSi.hubby()
+        console.log(obj1);
+        console.log(obj2);
+        console.log(liSi);
+    </script>
+</body>
+
+</html>
