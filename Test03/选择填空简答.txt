@@ -1,0 +1,270 @@
+一 选择题
+1、分析下段代码输出结果是（B）
+    var arr = [2,3,4,5,6];
+    var sum =0;
+    for(var i=1;i < arr.length;i++) {
+        sum +=arr[i]    }
+    console.log(sum);
+A．20     B．18     C．14     D．12
+
+2、以下关于 Array 数组对象的说法不正确的是（ D ）
+A．对数组里数据的排序可以用 sort 函数，如果排序效果非预期，可以给 sort 函数加一个排序函数的参数
+B．reverse 用于对数组数据的倒序排列
+C．向数组的最后位置加一个新元素，可以用 pop 方法
+D．unshift 方法用于向数组删除第一个元素
+
+3、以下代码运行的结果是输出( B )
+    var a = b = 10;
+    (function(){
+        var a=b=20
+    })();
+    console.log(b);
+A．10     B．20     C．报错      D．undefined
+
+4、以下代码运行后的结果是输出( B )
+    var a=[1, 2, 3];
+    console.log(a.join());
+A．123     B．1,2,3     C．1  2  3     D．[1,2,3]
+
+5、在 JS 中，’1555’+3 的运行结果是( C )
+A．1558     B．1552     C．15553     D．1553
+
+6、以下代码运行后弹出的结果是( B )
+    var a = 888;
+    ++a;
+    alert(a++);
+A．888     B．889     C．890     D．891
+
+7、关于变量的命名规则，下列说法正确的是（BCDE）
+A．首字符必须是大写或小写的字母，下划线（\_）或美元符（$）
+B．除首字母的字符可以是字母，数字，下划线或美元符
+C．变量名称不能是保留字
+D．长度是任意的
+E．区分大小写
+
+8、下列的哪一个表达式将返回值为假（  B  ）
+A．!(3<=1)
+B．(4>=4)&&(5<=2)
+C．(“a”==“a”)&&(“c”!=“d”)
+D．(2<3)||(3<2)
+
+9、下面代码，k 的运行结果是（  B  ）
+    var i = 0,j = 0;
+    for(;i<10,j<6;i++,j++){
+        k = i + j; 
+    }
+A．16     B．10     C．6     D．12
+
+10、var x = 1; function fn(n){n = n+1}; y = fn(x); y 的值为（  D  ）
+A．2     B．1     C．3     D．undefined
+
+11、[1,2,3,4].join('0').split('') 的执行结果是（  C  ）
+A．'1,2,3,4'               
+B．[1,2,3,4]  
+C．[“1”,“0”,“2”,“0”,“3”,“0”,“4”]          
+D．'1,0,2,0,3,0,4'
+
+12、下面代码的运行结果是：第一次弹（  A  ）第二次弹（  D  ）
+    function fn1() {
+        alert(1);
+    }
+    alert( fn1() );
+A．1     
+B．alert(1);     
+C．function fn1() { alert(1); }      
+D．undefined
+
+13，以下代码运行后，结果为（  B  ）
+    fn1();
+    var fn1 = function(a){ alert(a); }
+A．1     B．程序报错      C．alert(1);     D．undefined
+
+14，var n = "miao wei ke tang".indexOf("wei",6)；n 的值为：（  A  ）
+A．-1     B．5     C．程序报错      D．-10
+
+15，下面对 substring() 方法描述不正确的是（  C  ）
+A．一共有两个参数，省略第二个参数表示从参数开始位置提、截取到字符串结束。
+B．提取之前会比较两个参数的大小，并根据大小调整位置。
+C．可以接收负数参数，负数表示从后往前数字符位置。
+D．如果没有设置参数，直接返回整个字符串。
+
+16，alert( "12">"9" ) 的运行结果正确的是（  B  ）
+A．true     B．false
+
+17，下面的描述中不正确的是（  C  ）
+A．arguments 中保存了实际传入函数内的所有参数。
+B．return 只能在函数内部使用。
+C．setInterval(fn1,1000) 只会调用一次 fn1。
+D．Date 对象的 getMonth() 获取到的值比实际月份小 1。
+
+18，下面的等式成立的是（  D  ）
+A．parseInt(12.5) == parseFloat(12.5)
+B．Number('') == parseFloat('')
+C．isNaN('abc') == NaN
+D．typeof NaN === 'number'
+
+19，下面的描述中不正确的是（  A  ）
+A．'==' 在比较过程中，不但会比较两边的值，还会比较两边的数据类型。        
+B．NaN == NaN 的结果是 true。
+C．isNaN，判断传入的参数是否为数字，为数字返回 true，否则返回 false 
+D．字符串的 length 只可以获取，不可以设置。
+
+20，以下代码中，会出现什么结果：第一次弹（  A  ），第二次弹（  A  ），第三次弹（  B  ）
+    function fn1() {
+        var a = 0;
+        function fn2() {  ++a;  alert(a); }
+        return fn2;
+    }
+    fn1()();
+    var newFn = fn1();
+    newFn();
+    newFn();
+A．1     B．2     C．0     D．3
+
+21，下面代码的运行结果是：第一次弹（  D  ），第二次弹（  D  ）
+    var a = 100;
+    function fn1() { 
+        alert(a); 
+        var a = 10;
+    }  
+    alert( fn1() );
+A．100
+B．10
+C．function fn1() { alert(1); }
+D．undefined
+
+22，以下代码运行后，arr 的结果为（  A  ），arr2 的结果为（  C  ）
+    var arr = [1,2];
+    var arr2 = arr.concat();    
+    arr2.push( arr.splice(1,0) );
+A．[1,2]     B．[1,2,[2]]     C．[1,2,[]]     D．[1,2,3]
+23，下面关于数组的描述正确的是（  B  ）
+A．数组的 length 既可以获取，也可以修改。
+B．调用 pop() 方法，不会修改原数组中的值。
+C．shift() 方法的返回值是新数组的长度。
+D．调用 concat() 方法，会修改原数组的值。
+
+24，下列程序中 alert 按顺序分别弹出：（  B  ），（  A  ），（  B  ）
+    var a = 10;  
+    function test() {  
+        a = 100;  
+        alert(a);  
+        alert(this.a);  
+        var a;  
+        alert(a); 
+    }
+    test();  
+A．10     B．100     c．undefined     D．程序报错
+
+25，分析下面的代码，输出的结果是（  C  ）
+    var arr=new Array(5); 
+    arr[1]=1; 
+    arr[5]=2; 
+    console.log(arr.length); 
+A．2     B．5     C．6     D．报错
+
+26，在 JavaScript 中，下列（  D  ）语句能正确获取系统当前时间的小时值。 
+A．var date=new Date();  var hour=date.getHour(); 
+B．var date=new Date();  var hour=date.gethours(); 
+C．var date=new date();  var hour=date.getHours(); 
+D．var date=new Date();  var hour=date.getHours();
+
+27，请选择结果为真的选项（  A  ）
+A．null == undefined
+B．null === undefined
+C．undefined == false
+D．NaN == NaN
+
+28, Math.ceil(-3.14)的结果是（  B  ），Math.floor(-3.14) 的结果是（  C  ）
+A．-3.14     B．-3     C．-4     D．3.14
+
+29, 阅读以下代码，在页面中结果是（  B  ）
+    var  s="abcdefg";
+    alert(s.substring(1,2));
+A．a     B．b     C．bc     D．ab
+
+30,   以下 ECMAScript 变量命名格式正确的是（  A  ）
+A．_125dollor     B．1207A     C．-dollor     D．this
+二 填空题
+1 js 中强制类型转换为 number 类型的方法有:(Number()),(parseFloat或parseInt),(隐式转换,利用减乘除或前面加"-","+")
+2 获取所有子元素节点: (children).获取父节点(parentNode)
+3 把字符串按照指定字符分割并返回数组的方法为: (split).查询字符 a 在字符串‘fsdfsadf’中位置索引为：indexOf.
+4 有 x = 10,y=49，写出生成 x 到 y 直接随机数的方法：Math.floor(Math.random() * (y -x+ 1)) + x
+5 js 中的多次执行的定时器为：setInterval()
+只执行一次的定时器为：setTimeout
+清除定时器的方法：clearTimeout(obj)和clearInterval(obj).
+6 js 获取焦点事件为：focus().失去焦点事件为：blur().
+
+三  简答题
+1 .call()和.apply()的含义和区别?
+   答: call 和 apply 可以用来重新定义函数的的执行环境，也就是 this 的指向,区别是 call() 方法接受的是一个参数列表，而 apply() 方法接受的是一个包含多个参数的数组。
+
+2 谈谈对原型和闭包的理解？
+  答: 每一个函数都有一个prototype属性,该属性的所有属性和方法都会被构造函数继承,这就是原型;
+    闭包: 在一个函数内部的定义的函数调用外部函数的变量,闭包可以延长变量的生命周期
+
+3 简单介绍一下promise,他解决了什么问题？
+答: Promise对象代表了未来将要发生的事件，用来传递异步操作的消息,可以将异步操作队列化，按照期望的顺序执行，返回符合预期的结果,promise解决了异步操作队列化时会形成的回调地狱
+
+4 普通函数和箭头函数this指向说明？
+   答: 普通函数的this指向window,箭头函数没有this指向,this指向定义箭头函数时所处的外部执行环境的this
+
+5 let  var const的区别是什么？
+  答: var声明变量存在变量提升问题,  const, let 不存在变量提升问题,let声明的是变量,值可变,const声明的常量,值不变
+
+6 说一下es6的新特性和es6新增的数组方法不少于6个？
+   答: let,const 不存在变量提升的问题;
+   箭头函数，简化了定义函数的写法，同时可以巧用箭头函数的this（箭头函数本身没有this,它的this取决于外部的环境）;
+   新增了promise解决了回调地域的问题;新增了模块化、利用import 、export来实现导入、导出。
+   新增了结构赋值，ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）;
+   新增了class类的概念，它类似于对象。
+
+   es6新增的数组方法:
+      forEach 遍历数组,没有返回值；
+      filter(callback) 过滤数组，返回一个满足要求的数组
+      every(callback) 依据判断条件，数组的元素是否全满足，若满足则返回ture
+      some() 依据判断条件，数组的元素是否有一个满足，若有一个满足则返回ture
+      reverse() 将数组反转,返回值是反转后的数组
+      sort(),将数组排序
+
+7 ==和===有什么区别？JavaScript基本数据类型有哪些？
+   答: == 是等于,只要数据相等就为真, === 是全等,数据与数据类型都需要相等才为真
+       JavaScript基本数据类型: Number , String , boolean , null undefined
+
+8 什么是事件委托？请写出一个事件委托？
+    事件委托就是通过事件冒泡将不方便直接绑定到子元素的事件绑定到父元素上,再通过冒泡绑定到子元素身上,
+    <button>点击</button>
+    <ul>
+        <li>我是小li1</li>
+        <li>我是小li2</li>
+        <li>我是小li3</li>
+        <li>我是小li4</li>
+    </ul>
+    <script>
+        $(function () {
+            $('button').on('click', function () {
+                var li = $('<li>我是小li N</li>')
+                $('ul').append(li)
+            })
+            $('ul').on('click', 'li', function () {
+                $(this).css('color', '#F00').siblings().css('color', '#000')
+            })
+        })
+    </script>
+
+9 null 和 undefined的区别？
+    答: null是代表空值,undefined是代表未定义;Null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象;Undefined表示”缺少值”,就是此处应该有一个值,但是还没有定义
+
+10  HTML5有哪些新特性？
+   答:  语义化标签像<header>, <footer>，<nav>，<section>， <aside>等等
+        视频和音频,HTML5 提供了播放音频文件的标准，即使用 <audio> 元素;HTML5 规定了一种通过 video 元素来包含视频的标准方法,
+        本地存储localStorage 和浏览器存储sessionStorage,
+        动画
+
+11 跨越问题如何解决？
+    答:jsonp 利用<script></script>标签跨域访问文件的特点实现,
+       利用cors机制实现跨域
+
+12 ajax工作流程以及原理？
+
+    答: Ajax 的原理简单来说通过 XmlHttpRequest 对象来向服务器发异步请求， 从服务器获得数据，然后用 javascript 来操作 DOM 而更新页面。

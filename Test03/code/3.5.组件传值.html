@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /*  father_box,
+        son1_box,
+        son2_box {
+            width: 800px;
+            height: 240px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <father></father>
+    </div>
+    <template id="father">
+        <div class="father_box" style="width: 800px;
+        border: 1px solid #ccc;">
+            <div>父亲姓名：{{name}}</div>
+            <div>母亲姓名：<input type="text" v-model="mothername" /></div>
+            <div>son1媳妇：{{son1_wife}}</div>
+            <son1 :mothername="mothername" @son1_wife="getName"></son1>
+            <son2 :mothername="mothername" :son1_wife="son1_wife"></son2>
+        </div>
+    </template>
+    <template id="son1">
+        <div class="son1_box" style="width: 800px;
+        height: 150px;
+        border: 1px solid #ccc;">
+
+            son1组件
+            <div>son1的姓名：{{son1Name}}</div>
+            <div>son1_wife的姓名：<input type="text" v-model="son1_wife" @input="$emit('son1_wife',son1_wife)" /></div>
+            <div>son1母亲姓名:{{mothername}}</div>
+
+        </div>
+    </template>
+    <template id="son2">
+        <div class="son2_box" style="width: 800px;
+        height: 150px;
+        border: 1px solid #ccc;">
+
+            son2组件
+            <div>son2的姓名：{{son2Name}}</div>
+            <div>son2母亲姓名:{{mothername}}</div>
+            <div>son2大嫂姓名:{{son1_wife}}</div>
+
+        </div>
+    </template>
+    <script src="../js/axios.js"></script>
+    <script src="../js/vue_2.5.22.js"></script>
+    <script src="../js/vue-router_3.0.2.js"></script>
+
+    <script>
+        // son1
+        const Son1 = {
+            props: ['mothername'],
+            data() {
+                return {
+                    son1Name: 'son1',
+                    son1_wife: ''
+                }
+            },
+            template: '#son1'
+        }
+        const Son2 = {
+            props: ['mothername', 'son1_wife'],
+            data() {
+                return {
+                    son2Name: 'son2'
+                }
+            },
+            template: '#son2'
+        }
+        // 父组件
+        Vue.component('father', {
+            name: 'father',
+            data: function () {
+                return {
+                    name: '爸爸',
+                    mothername: '妈妈',
+                    son1_wife: ''
+                }
+            },
+            template: '#father',
+            methods: {
+                getName(name) {
+                    this.son1_wife = name
+                }
+            },
+            components: {
+                son1: Son1,
+                son2: Son2
+            }
+        })
+        // vue实例对象
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {}
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <button>点击</button>
+    <ul>
+        <li>我是小li1</li>
+        <li>我是小li2</li>
+        <li>我是小li3</li>
+        <li>我是小li4</li>
+    </ul>
+    <script>
+        $(function () {
+            $('button').on('click', function () {
+                var li = $('<li>我是小li N</li>')
+                $('ul').append(li)
+            })
+            $('ul').on('click', 'li', function () {
+                $(this).css('color', '#F00').siblings().css('color', '#000')
+            })
+        })
+    </script>
+</body>
+
+</html>

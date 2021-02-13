@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <p>姓名 1</p>
+        <p>姓名 2</p>
+        <p>姓名 3</p>
+        <p>姓名 4</p>
+        <p>姓名 6</p>
+        <p>姓名 7</p>
+        <p>姓名 8</p>
+        <p>姓名 9</p>
+        <p>姓名 10</p>
+        <p>姓名 11</p>
+    </div>
+    <script>
+        var a = document.querySelector('#a')
+        var ps = document.querySelectorAll('p')
+        var newP = document.createElement('p')
+
+        newP.innerHTML = '姓名 5'
+        console.log(newP);
+        ps.forEach(function (value, index, ps) {
+            if (ps[index].innerText == '姓名 6') {
+                ps[index].parentNode.insertBefore(newP, ps[index]);
+            }
+        })
+        a.removeChild(a.lastElementChild)
+    </script>
+</body>
+
+</html>

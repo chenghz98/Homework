@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <router-view></router-view>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.4.3/dist/vue-router.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex@3.5.1/dist/vuex.min.js"></script>
+    <script>
+        const Father = {
+            props: [],
+            data() {
+                return {
+                    father_name: "张三"
+                }
+            },
+            template: `
+                <div>
+                    <p>爸爸的姓名:{{father_name}}</p>
+                    <input>
+                    <p></p>
+                </div>
+            `
+        }
+        const Son1 = {
+            props: [],
+            template: ``
+        }
+        const Son2 = {
+            props: [],
+            template: ``
+        }
+
+        const router = new VueRouter({
+            routes: [{
+                path: '/',
+                component: Father,
+                children:{
+                    
+                }
+            }]
+        })
+        const vm = new Vue({
+            router,
+            el: '#app',
+            name: 'App',
+            // 组件
+            components: {
+
+            },
+            // 本部数据
+            data: {
+
+            },
+            // 方法
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>
