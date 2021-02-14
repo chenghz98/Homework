@@ -85,6 +85,8 @@ button {
   height: 30px;
   width: 70px;
   margin-top: 10px;
+  outline: none;
+  border-radius: 3px;
 }
 .price span {
   color: red;
