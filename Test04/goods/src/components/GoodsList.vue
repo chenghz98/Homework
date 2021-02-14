@@ -5,16 +5,16 @@
         <div class="img"><img :src="item.img_url" :alt="item.title" /></div>
         <div class="listText">
           <div class="listTitle">{{ item.title }}</div>
-          <div class="date">上架日期:{{ item.add_time }}</div>
+          <div class="date">上架日期:{{ item.add_time | dateFormat }}</div>
           <div class="num">库存数量:{{ item.stock_quantity }}</div>
           <div class="price">
             <span>{{ item.market_price }}</span>
             <del>{{ item.sell_price }}</del>
           </div>
           <div class="buy_num">
-            够买数量:
+            购买数量:
             <div class="box">
-              <div class="number">{{ item.click }}</div>
+              <input type="text" :value="item.click" />
             </div>
           </div>
           <button>立即购买</button>
@@ -49,6 +49,7 @@ export default {
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 .goodSList {
   border: 1px solid #ccc;
@@ -75,6 +76,7 @@ export default {
 }
 .buy_num {
   display: flex;
+  text-align: center;
 }
 button {
   background-color: red;
@@ -89,11 +91,20 @@ button {
   font-size: 20px;
 }
 .box {
+  position: relative;
   width: 60px;
   height: 20px;
   margin-left: 10px;
   margin-top: 5px;
   border: 1px solid black;
+}
+.box input {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 60px;
+  height: 20px;
+  outline: none;
 }
 .number {
   line-height: 20px;
