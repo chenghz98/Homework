@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            margin: auto;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 12px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <my-table :goodslist="goodslist">
+            <!--TODO 设置作用域插槽-->
+            <template slot-scope="scope">
+                <div v-if="scope.row.stock_quantity<20" style="background-color: red">{{scope.row.stock_quantity}}</div>
+                <div v-else-if="scope.row.stock_quantity<100" style="background-color: orange">
+                    {{scope.row.stock_quantity}}</div>
+                <div v-else>{{scope.row.stock_quantity}}</div>
+            </template>
+        </my-table>
+    </div>
+    <template id="myTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>商品编号</th>
+                    <th>商品名称</th>
+                    <th>商品图片</th>
+                    <th>商品描述</th>
+                    <th>市场价</th>
+                    <th>优惠价</th>
+                    <th>库存数量</th>
+                    <th>点击量</th>
+                    <th>上架时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in goodslist" :key="item.id">
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                    <td>
+                        <img :src="item.img_url" :alt="item.title" />
+                    </td>
+                    <td>{{item.zhaiyao}}</td>
+                    <td>{{item.market_price}}</td>
+                    <td>{{item.sell_price}}</td>
+                    <!-- TODO 作⽤域插槽 -->
+                    <td>
+                        <slot :row="item">{{item.stock_quantity}}</slot>
+                    </td>
+                    <td>{{item.click}}</td>
+                    <td>{{item.add_time | dateFormat}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+    <script src="./js/axios.js"></script>
+    <script src="./js/vue_2.5.22.js"></script>
+    <script src="./js/vue-router_3.0.2.js"></script>
+    <script>
+        //<!--TODO --> 过滤器 时间格式化
+        Vue.filter('dateFormat', function (originVal) {
+            const dt = new Date(originVal)
+            const y = dt.getFullYear()
+            const m = (dt.getMonth() + 1 + '').padStart(2, '0')
+            const d = (dt.getDate() + '').padStart(2, '0')
+
+            const hh = (dt.getHours() + '').padStart(2, '0')
+            const mm = (dt.getMinutes() + '').padStart(2, '0')
+            const ss = (dt.getSeconds() + '').padStart(2, '0')
+
+            return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+        })
+
+        const myTable = {
+            props: ['goodslist'],
+            data() {
+                return {}
+            },
+            methods: {},
+            template: '#myTable'
+        }
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                goodslist: []
+            },
+            // <!--TODO-->在created阶段获取数据
+            created() {
+                this.getgoodslist()
+            },
+            methods: {
+                async getgoodslist() {
+                    const {
+                        data: res
+                    } = await axios.get('http://www.liulongbin.top:3005/api/getgoods?pageindex=0')
+                    if (res.status !== 0) {
+                        return console.log();
+                    }
+                    this.goodslist = res.message
+                    console.log(this.goodslist)
+                    console.log(res);
+                }
+            },
+            components: {
+                myTable
+            },
+
+        })
+    </script>
+</body>
+
+</html>
